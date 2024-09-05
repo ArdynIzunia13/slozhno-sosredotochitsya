@@ -1,7 +1,50 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  inline-size: 375px;
-  block-size: 668px;
+  min-inline-size: 375px;
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+}
+.header {
+  padding: 1vi 3vi;
+}
+.header__theme-menu-list {
+  color: var(--accent-color);
+  display: grid;
+  justify-items: end;
+  gap: 10px;
+}
+.header__title {
+  font-family: var(--main-font);
+  color: var(--title-color);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-weight: 700;
+  line-height: 95px;
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+.header__theme-menu-button {
+  font-family: var(--main-font);
+  font-size: 18px;
+  background-color: transparent;
+  outline: 1px;
+  border: none;
+  text-transform: lowercase;
+}
+.header__text {
+  margin-block-start: 55px;
+  color: var(--font-color);
+  font-size: 18px;
+  font-family: var(--main-font);
+  background-color: var(--accent-color);
+  max-inline-size: 355px;
+  max-block-size: 117px;
+}
+.decorated-zone::before {
+  content: "Rec";
+  display: flex;
+  font-family: var(--main-font);
+  font-size: 18px;
+  text-transform: uppercase;
+  justify-content: end;
+  margin: 10px 18px 39px;
+  color: var(--accent-color);
 }
