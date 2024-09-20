@@ -151,6 +151,8 @@ border-right: 1px solid var(--accent-color);
   margin-bottom: 50px;
 }
 .section__image {
+  display: grid;
+  gap: 2vi;
   padding: 3vi 3vi;
 }
 .image {
@@ -255,5 +257,12 @@ text-shadow: 3px 2px 0 var(--accent-color);
     grid-column-start: 3;
     grid-row-start: 3;
   }
-  .
+  .cover__link-list:not(.column-list) {
+    display: grid;
+    grid-template-columns: 1fr 2fr; 
+  }
+  .cover__link-list-item:not(.column-item){
+    grid-column-start: 2;
+  }
+  
 }
