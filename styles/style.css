@@ -64,7 +64,7 @@ height: 100vh;
   border-bottom: 1px solid var(--button-hover);
 }
 .header__text {
-  margin-block-start: 55px;
+  align-self: center;
   max-inline-size: 355px;
   max-block-size: 117px;
 }
@@ -89,14 +89,17 @@ height: 100vh;
   color: var(--accent-color);
 }
 .link {
+  text-shadow: 2px 2px 0 var(--accent-color);
   text-shadow: 3px 3px var(--accent-color);
   text-decoration: none;
 }
 .link:hover {
+  cursor: pointer;
   text-decoration: underline;
 }
 .link:focus {
   outline: 1px solid white;
+  outline-offset: -2px;
 }
 .decorated::after {
   content: "";
@@ -182,7 +185,7 @@ margin-block-start: 38px;
 }
 .footer__title {
   font-family: var(--main-font);
-font-size: 116px;
+font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
 font-weight: 700;
 line-height: 95.7px;
 color: var(--title-color);
@@ -240,8 +243,8 @@ text-shadow: 3px 2px 0 var(--accent-color);
   .column-title {
     flex-basis: 0;
   }
-  .header__title {
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem) ;
+  .header__title,.footer__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 }
 @media (min-width:1024px) {
@@ -251,11 +254,16 @@ text-shadow: 3px 2px 0 var(--accent-color);
     grid-template-rows: repeat(3, 1fr);
     gap: 8px;
   }
+  .header__text {
+    max-inline-size: 491px;
+    max-block-size: 71px;
+  }
   .header__theme-menu-list {
     margin-block-start: 18px;
     flex-direction: row;
   }
   .header__theme-menu {
+    padding-block-start: 10px;
     grid-column-start: 2;
     justify-content: center;
   }
@@ -266,6 +274,8 @@ text-shadow: 3px 2px 0 var(--accent-color);
   .header__article {
     grid-column: span 2 / span 2;
     grid-column-start: 2;
+    grid-column: span 2 / span 2;
+    grid-column-start: 2;
     grid-row-start: 3;
   }
   .header__text {
@@ -274,7 +284,7 @@ text-shadow: 3px 2px 0 var(--accent-color);
   }
   .cover__link-list:not(.column-list) {
     display: grid;
-    grid-template-columns: 1fr 2fr; 
+    grid-template-columns: 1fr 2fr;
   }
   .column-list {
     display: grid;
