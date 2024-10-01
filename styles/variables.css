@@ -4,7 +4,7 @@
 */
 :root {
   --font-size: 18px;
-  --main-font: 'IBM Plex Mono';
+  --main-font: 'IBM Plex Mono',sans-serif;
   --title-shadow: #FF0070;
   --padding-desktop: 1.25em;
 }

@@ -165,7 +165,7 @@ border-right: 1px solid var(--accent-color);
 }
 .cover__text {
   font-family: var(--main-font);
-  font-size: 18px;
+  font-size: var(--font-size);
   font-weight: 400;
   line-height: 23.4px;
   color: var(--main-text-color);
@@ -261,7 +261,7 @@ text-shadow: 3px 2px 0 var(--title-shadow);
     grid-row-start: 3;
   }
   .cover__container-column {
-    padding: clamp(70px, 8vh, 80px) 20px;
+    padding: clamp(70px, 8vh, 80px) var(--padding-desktop);
   }
   .cover__link-list {
     flex-direction: row;
@@ -289,7 +289,7 @@ text-shadow: 3px 2px 0 var(--title-shadow);
     padding: 59px 20px 0;
   }
   .third__div {
-    padding: clamp(5px, 0.5vh, 15px) 20px;
+    padding: clamp(5px, 0.5vh, 15px) var(--padding-desktop);
   }
   .header__title,.footer__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
