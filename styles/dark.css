@@ -14,28 +14,19 @@
   --title-section: var(--accent-color);
   --title-color: #DB00FF;
   --font-color: #000028;
-  --bg-image: url(/images/cover-image-dark.png); 
+  --bg-image: url(../images/cover-image-dark.png); 
   --button-hover: rgb(255, 0, 112, 0.4);
   --visibility-decor: visible;
 }
-:root.theme-dark {
+
+@media (prefers-color-scheme: dark) {
+  :root {
   --main-text-color: #F1B2CE;
   --accent-color: #FF0070;
   --title-section: var(--accent-color);
   --title-color: #DB00FF;
   --font-color: #000028;
-  --bg-image: url(/images/cover-image-dark.png); 
-  --button-hover: rgb(255, 0, 112, 0.4);
-  --visibility-decor: visible;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --main-text-color: #F1B2CE;
-  --accent-color: #FF0070;
-  --title-section: var(--accent-color);
-  --title-color: #DB00FF;
-  --font-color: #000028;
-  --bg-image: url(/images/cover-image-dark.png); 
+  --bg-image: url(../images/cover-image-dark.png); 
   --button-hover: rgb(255, 0, 112, 0.4);
   --visibility-decor: visible;
   }

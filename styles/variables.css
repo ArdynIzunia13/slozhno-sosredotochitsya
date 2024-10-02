@@ -4,7 +4,14 @@
 */
 :root {
   --font-size: 18px;
-  --main-font: 'IBM Plex Mono',sans-serif;
+  --main-font: 'IBM Plex Mono',monospace;
   --title-shadow: #FF0070;
   --padding-desktop: 1.25em;
+
+  --main-text-color: #F1B2CE;
+  --accent-color: #FF0070;
+  --title-section: var(--accent-color);
+  --title-color: #DB00FF;
+  --font-color: #000028; 
+  --button-hover: rgb(255, 0, 112, 0.4);
 }

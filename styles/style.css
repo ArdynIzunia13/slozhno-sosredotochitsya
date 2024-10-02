@@ -2,24 +2,21 @@
 
 .page { 
   min-inline-size: 375px; 
-  background: var(--bg-image); 
+  background-image: var(--bg-image); 
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 }
-/*.main {
-  padding: 6em 2.5vw;
-}*/
 .header {
-min-height: 668px;
-height: 100vh;
+  min-height: 668px;
+  height: 100vh;
   position: relative;
   padding: clamp(0.625rem, 0.029rem + 2.54vw, 1.25rem);
   display: grid;
   align-content: space-evenly;
 }
-.header__article {
+.header__div {
   display: grid;
   justify-content: end;
 }
@@ -32,10 +29,8 @@ height: 100vh;
   flex-direction: column;
   gap: 0.5rem;
 }
-.header-title__div {
-  align-self: center;
-}
 .header__title {
+  align-self: center;
   font-family: var(--main-font);
   color: var(--title-color);
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
@@ -49,11 +44,15 @@ height: 100vh;
   font-size: 18px;
   background-color: transparent;
   border: 1px solid transparent;
-  outline: 1px solid var(--title-section);
   text-transform: lowercase;
   cursor: pointer;
   inline-size: 70px;
   block-size: 26px;
+  transition: 1s;
+}
+.header__theme-menu-button_active {
+  outline: 1px solid var(--title-section);
+  pointer-events: none;
 }
 .header__theme-menu-button:hover {
   outline: 1px solid var(--button-hover);
@@ -61,7 +60,7 @@ height: 100vh;
 
 .header__theme-menu-button:focus-visible {
   outline: none;
-  border-bottom: 1px solid var(--button-hover);
+  border-bottom: 1px solid var(--title-section);
 }
 .header__text {
   align-self: center;
@@ -90,12 +89,11 @@ height: 100vh;
 }
 .link {
   text-shadow: 2px 2px 0 var(--accent-color);
-  text-shadow: 3px 3px var(--accent-color);
   text-decoration: none;
 }
 .link:hover {
   cursor: pointer;
-  text-decoration: underline;
+  border-bottom: 1px solid;
 }
 .link:focus {
   outline: 1px solid white;
@@ -120,8 +118,8 @@ height: 100vh;
 height: 25px;
 top: 20px;
 right: 20px;
-border-top: 1px solid var(--accent-color);
-border-right: 1px solid var(--accent-color);
+border-top: 1px solid var(--title-section);
+border-right: 1px solid var(--title-section);
 }
 .decorated-zone::before {
   content: "";
@@ -141,7 +139,7 @@ border-right: 1px solid var(--accent-color);
 .cover__container:not(:last-of-type) {
   padding: 45px 10px 0;
   gap: 20px;
-  display: flex;
+  display: grid;
 }
 .third__div {
   padding: 0 11px 0;
@@ -174,19 +172,15 @@ border-right: 1px solid var(--accent-color);
   font-weight: 400;
   margin-top: 2px;
 }
-.cover {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 50px;
-}
 .section__image {
   display: grid;
   gap: 2vi;
   padding: 0.5em 0.5em 2em;
 }
 .image {
-  max-width: 100%;
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
 }
 .container__image {
   display: grid;
@@ -213,12 +207,7 @@ text-shadow: 3px 2px 0 var(--title-shadow);
   .container__image {
     display: grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(2, 1fr);
         gap: 20px;
-  }
-  .image {
-    object-fit: cover;
-    height: 100%;
   }
   .image__one {
     grid-column: span 2 / span 2;
@@ -250,18 +239,18 @@ text-shadow: 3px 2px 0 var(--title-shadow);
   .header__theme-menu {
     grid-column-start: 3;
   }
-  .header-title__div {
+  .header__title{
     grid-column: span 3 / span 3;
     grid-row-start: 2;
     margin-left: -20px;
   }
-  .header__article{
+  .header__div{
     grid-column: span 2 / span 2;
     grid-column-start: 2;
     grid-row-start: 3;
   }
   .cover__container-column {
-    padding: clamp(70px, 8vh, 80px) var(--padding-desktop);
+    padding: clamp(80px, 9vh, 90px) var(--padding-desktop);
   }
   .cover__link-list {
     flex-direction: row;
@@ -282,11 +271,11 @@ text-shadow: 3px 2px 0 var(--title-shadow);
     flex-basis: 0;
   }
   .column-title {
-    flex-basis: 0;
     max-inline-size: 236px;
   }
-  .cover__container:not(:last-of-type) {
-    padding: 59px 20px 0;
+  .cover__container:not(:nth-child(3)) {
+    grid-template-columns: 1fr 2.06fr;
+    padding: 60px 20px 0;
   }
   .third__div {
     padding: clamp(5px, 0.5vh, 15px) var(--padding-desktop);
@@ -313,12 +302,12 @@ text-shadow: 3px 2px 0 var(--title-shadow);
     grid-column-start: 2;
     justify-content: center;
   } 
-  .header__article {
+  .header__div {
     padding-block-end: 4em;
   }
   .cover__link-list:not(.column-list) {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 2.06fr;
   }
   .column-list {
     display: grid;
