@@ -57,7 +57,6 @@
 .header__theme-menu-button:hover {
   outline: 1px solid var(--button-hover);
 }
-
 .header__theme-menu-button:focus-visible {
   outline: none;
   border-bottom: 1px solid var(--title-section);
@@ -95,7 +94,10 @@
   cursor: pointer;
   border-bottom: 1px solid;
 }
-.link:focus {
+.link:focus{
+  outline: none;
+}
+.link:focus-visible {
   outline: 1px solid white;
   outline-offset: -2px;
 }
@@ -136,19 +138,18 @@ border-right: 1px solid var(--title-section);
   font-size: var(--font-size);
   font-family: var(--main-font);
 }
-.cover__container:not(:last-of-type) {
-  padding: 45px 10px 0;
-  gap: 20px;
-  display: grid;
-}
 .third__div {
   padding: 0 11px 0;
+}
+.cover__container {
+  padding: 0px 10px 0;
+  gap: 20px;
+  display: grid;
 }
 .cover__link-list {
   display: flex;
     flex-direction: column;
-    gap: var(--padding-desktop);
-    
+    row-gap: var(--padding-desktop);
 }
 .cover__link-list-item {
   display: flex;
@@ -250,7 +251,7 @@ text-shadow: 3px 2px 0 var(--title-shadow);
     grid-row-start: 3;
   }
   .cover__container-column {
-    padding: clamp(80px, 9vh, 90px) var(--padding-desktop);
+    padding: clamp(80px, 9vh, 90px) var(--padding-desktop) 80px;
   }
   .cover__link-list {
     flex-direction: row;
@@ -265,7 +266,7 @@ text-shadow: 3px 2px 0 var(--title-shadow);
   }
   .cover__link-list-item {
     gap: 1vi;
-    flex-basis: 472px;
+    
   }
   .column-item {
     flex-basis: 0;
@@ -274,11 +275,17 @@ text-shadow: 3px 2px 0 var(--title-shadow);
     max-inline-size: 236px;
   }
   .cover__container:not(:nth-child(3)) {
-    grid-template-columns: 1fr 2.06fr;
+    grid-template-columns: 1fr 2fr;
     padding: 60px 20px 0;
   }
   .third__div {
-    padding: clamp(5px, 0.5vh, 15px) var(--padding-desktop);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 5px 20px;
+  }
+  .section__how {
+    display: grid;
+    gap: 2vh;
   }
   .header__title,.footer__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
@@ -305,9 +312,11 @@ text-shadow: 3px 2px 0 var(--title-shadow);
   .header__div {
     padding-block-end: 4em;
   }
-  .cover__link-list:not(.column-list) {
+  .cover__container:not(:nth-child(3)) {
+    grid-template-columns: 1fr 2.3fr;
+  }
+  .cover__link-list {
     display: grid;
-    grid-template-columns: 1fr 2.06fr;
   }
   .column-list {
     display: grid;
