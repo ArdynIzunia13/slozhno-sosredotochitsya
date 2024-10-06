@@ -82,7 +82,7 @@
   visibility: var(--visibility-decor);
   position: absolute;
   right: clamp(2.5rem, 2.1389rem + 1.5408vw, 3.125rem);
-  top: clamp(12px, 2vh, 20px);
+  top: 10px;
   text-transform: uppercase;
   font-family: var(--main-font);
   color: var(--accent-color);
@@ -99,7 +99,7 @@
   outline: none;
 }
 .link:focus-visible {
-  outline: 1px solid white;
+  outline: 1px solid var(--main-text-color);
   outline-offset: -2px;
 }
 .decorated::after {
@@ -119,8 +119,8 @@
   position: absolute;
   width: 25px;
   height: 25px;
-  top: 15px;
-  right: 20px;
+  top: 7px;
+  right: 10px;
   border-top: 1px solid var(--title-section);
   border-right: 1px solid var(--title-section);
 }
@@ -129,8 +129,8 @@
   position: absolute;
   width: 25px;
   height: 25px;
-  bottom: 25px;
-  left: 20px;
+  bottom: 13px;
+  left: 10px;
   border-bottom: 1px solid var(--title-section);
   border-left: 1px solid var(--title-section);
 }
@@ -145,7 +145,7 @@
 .section {
   gap: 20px;
   display: grid;
-  padding: clamp(40px, 6vh, 7vw) 2.5vw;
+  padding: clamp(40px, 6vh, 8vw) 2.5vw;
 }
 .article__how {
   display: grid;
@@ -154,7 +154,7 @@
 .cover__link-list {
   display: flex;
   flex-direction: column;
-  row-gap: 22px;
+  row-gap: 21px;
 }
 .cover__link-list-item {
   display: flex;
@@ -163,7 +163,7 @@
 }
 .section-causes {
   display: grid;
-  padding: clamp(0.813rem, -0.201rem + 4.33vw, 1.875rem) 2.5vw;
+  padding: clamp(0.813rem, -1.201rem + 5.33vw, 1.875rem) 2.5vw;
   row-gap: clamp(21px, 3vh, 22px);
 }
 .causes-list {
@@ -183,7 +183,7 @@
 .section__image {
   display: grid;
   gap: 2vi;
-  padding: 3% 2.5vw 9%;
+  padding: 3% 2.5vw 11%;
 }
 .image {
   width: 100%;
@@ -236,8 +236,22 @@
     grid-column-start: 2;
     grid-row-start: 3;
   }
+  .section__image {
+    padding: 3% 2.5vw 8%;
+  }
 }
 @media (min-width: 768px) {
+  .decorated-zone::after{
+    top: 20px;
+    right: 20px;
+  }
+  .decorated-zone::before {
+    bottom: 20px;
+    left: 20px;
+  }
+  .decorated {
+    top: clamp(10px, 2.5vh, 25px);
+  }
   .header {
     grid-template-columns: min-content 1fr min-content;
   }
@@ -315,11 +329,11 @@
     padding: 60px 20px;
   }
   .section-causes {
-    padding: 20px;
+    padding: 25px 20px;
   }
   .cover__link-list {
     display: grid;
-    row-gap: 20px;
+    row-gap: 22px;
   }
   .causes-list {
     display: grid;
@@ -333,6 +347,6 @@
     grid-column-start: 2;
   }
   .section__image {
-    padding: 2% 2vw 6.5%;
+    padding: 2% 2vw 6%;
   }
 }
