@@ -1,8 +1,8 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
-.page { 
-  min-inline-size: 375px; 
-  background-image: var(--bg-image); 
+.page {
+  min-inline-size: 375px;
+  background-image: var(--bg-image);
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -10,11 +10,11 @@
 }
 .header {
   min-height: 668px;
+  grid-template-rows: 1fr min-content 1fr;
   height: 100vh;
   position: relative;
   padding: clamp(0.625rem, 0.029rem + 2.54vw, 1.25rem);
   display: grid;
-  align-content: space-evenly;
 }
 .header__div {
   display: grid;
@@ -23,6 +23,7 @@
 .header__theme-menu {
   display: grid;
   justify-content: end;
+  align-self: center;
 }
 .header__theme-menu-list {
   display: flex;
@@ -80,7 +81,7 @@
 .decorated {
   visibility: var(--visibility-decor);
   position: absolute;
-  right: clamp(40px, 5vh, 50px);
+  right: clamp(2.5rem, 2.1389rem + 1.5408vw, 3.125rem);
   top: clamp(12px, 2vh, 20px);
   text-transform: uppercase;
   font-family: var(--main-font);
@@ -94,7 +95,7 @@
   cursor: pointer;
   border-bottom: 1px solid;
 }
-.link:focus{
+.link:focus {
   outline: none;
 }
 .link:focus-visible {
@@ -111,27 +112,27 @@
   left: 41px;
   background-color: var(--accent-color);
   border-radius: 50%;
-  box-shadow: 0px 0px 4px 2px #FF0070;
+  box-shadow: 0px 0px 4px 2px #ff0070;
 }
 .decorated-zone::after {
   content: "";
   position: absolute;
   width: 25px;
-height: 25px;
-top: 1.5vh;
-right: 2vh;
-border-top: 1px solid var(--title-section);
-border-right: 1px solid var(--title-section);
+  height: 25px;
+  top: 15px;
+  right: 20px;
+  border-top: 1px solid var(--title-section);
+  border-right: 1px solid var(--title-section);
 }
 .decorated-zone::before {
   content: "";
-    position: absolute;
-    width: 25px;
-    bottom: 3vw;
-    height: 25px;
-    left: 2vh;
-    border-bottom: 1px solid var(--accent-color);
-    border-left: 1px solid var(--accent-color);
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  bottom: 25px;
+  left: 20px;
+  border-bottom: 1px solid var(--title-section);
+  border-left: 1px solid var(--title-section);
 }
 .main__title {
   color: var(--title-section);
@@ -152,13 +153,13 @@ border-right: 1px solid var(--title-section);
 }
 .cover__link-list {
   display: flex;
-    flex-direction: column;
-    row-gap: 22px;
+  flex-direction: column;
+  row-gap: 22px;
 }
 .cover__link-list-item {
   display: flex;
   flex-direction: column;
-  gap: 2.2vi;
+  gap: 8.5px;
 }
 .section-causes {
   display: grid;
@@ -187,6 +188,7 @@ border-right: 1px solid var(--title-section);
 .image {
   width: 100%;
   object-fit: cover;
+  object-position: center;
   height: 100%;
 }
 .container__image {
@@ -198,59 +200,61 @@ border-right: 1px solid var(--title-section);
   align-items: center;
   justify-content: center;
   position: relative;
-min-height: 668px;
-height: 100vh;
+  min-height: 668px;
+  height: 100vh;
 }
 .footer__title {
   font-family: var(--main-font);
-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-font-weight: 700;
-line-height: 95.7px;
-color: var(--title-color);
-text-shadow: 3px 2px 0 var(--title-shadow);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-weight: 700;
+  line-height: 95.7px;
+  color: var(--title-color);
+  text-shadow: 3px 2px 0 var(--title-shadow);
 }
-@media (min-width:768px) {
+@media (min-width: 768px) {
   .container__image {
     display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
   .image__sunset {
     grid-column: span 2 / span 2;
+  }
+  .image__cream {
+    grid-row: span 2 / span 2;
+    grid-column-start: 3;
+  }
+  .image__tape {
+    grid-row: span 2 / span 2;
+    grid-row-start: 2;
+  }
+  .image__books {
+    grid-row-start: 2;
+  }
+  .image__street {
+    grid-column: span 2 / span 2;
+    grid-column-start: 2;
+    grid-row-start: 3;
+  }
 }
-.image__cream {
-  grid-row: span 2 / span 2;
-  grid-column-start: 3;
-}
-.image__tape {
-  grid-row: span 2 / span 2;
-  grid-row-start: 2;
-}
-.image__books {
-  grid-row-start: 2;
-}
-.image__street {
-  grid-column: span 2 / span 2;
-  grid-column-start: 2;
-  grid-row-start: 3;
-}
-}
-@media (min-width:768px) {
+@media (min-width: 768px) {
   .header {
     grid-template-columns: min-content 1fr min-content;
   }
   .header__theme-menu {
     grid-column-start: 3;
+    padding-block-end: 15px;
   }
-  .header__title{
+  .header__title {
     grid-column: span 3 / span 3;
     grid-row-start: 2;
     margin-left: -20px;
   }
-  .header__div{
+  .header__div {
     grid-column: span 2 / span 2;
     grid-column-start: 2;
     grid-row-start: 3;
+    padding-block-end: 10px;
   }
   .cover__link-list {
     flex-direction: row;
@@ -261,7 +265,7 @@ text-shadow: 3px 2px 0 var(--title-shadow);
     flex-direction: column;
   }
   .cover__link-list-item {
-    gap: 1vi; 
+    gap: 7.6px;
   }
   .causes-title {
     max-inline-size: 236px;
@@ -279,11 +283,12 @@ text-shadow: 3px 2px 0 var(--title-shadow);
     display: grid;
     gap: 2vh;
   }
-  .header__title,.footer__title {
+  .header__title,
+  .footer__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 }
-@media (min-width:1024px) {
+@media (min-width: 1024px) {
   .header {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -300,7 +305,8 @@ text-shadow: 3px 2px 0 var(--title-shadow);
   .header__theme-menu {
     grid-column-start: 2;
     justify-content: center;
-  } 
+    align-self: auto;
+  }
   .header__div {
     padding-block-end: 4em;
   }
@@ -323,7 +329,7 @@ text-shadow: 3px 2px 0 var(--title-shadow);
     grid-column: span 3 / span 3;
     max-width: 317px;
   }
-  .cover__link-list-item:not(.causes-item){
+  .cover__link-list-item:not(.causes-item) {
     grid-column-start: 2;
   }
   .section__image {
